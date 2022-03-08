@@ -1,5 +1,5 @@
 # DanTube
-** A sort of YouTube**
+**A sort of YouTube**
 
 ## To start
 **in proj reposytory create 'media' folder: there you will store all vidios**
