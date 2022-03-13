@@ -5,6 +5,7 @@
       <div class="content">
         <div class="wrapper">
             {% for i in vidio %}
+            <center>
             <div class="vidio_icon">
             <a class='href' href="/vidio/{{ i.id }}/watch/">
              <img class='img vidio_prive' src="{{ i.privew.url }}"> 
@@ -19,7 +20,7 @@
               <p class="for_phone">{{ i.description|slice:":50" }}</p>
             </a> 
             </div>
-
+            </center>
             {% endfor %}
         </div>
       </div>

@@ -82,10 +82,13 @@
               {% else %}
               <li><a class="dropdown-item" href="/acount/">{{ request.user }} account</a></li>
               {% endif %}
-              <li><a class="dropdown-item" href="/acount/logout/">log Out</a></li>
-              <li><a class="dropdown-item" href="/acount/mychenel/">My chenel</a></li>
+              {% if request.resolver_match.view_name == 'mychenel' %}
+              <li><a class="dropdown-item active" href="/acount/mychenel/">My cheanele</a></li>
+              {% else %}
+              <li><a class="dropdown-item" href="/acount/mychenel/">My cheanele</a></li>
+              {% endif %}
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/admin">Admin</a></li>
+              <li><a class="dropdown-item" href="/acount/logout/">log Out</a></li>
 
             </ul>
             {% else %}

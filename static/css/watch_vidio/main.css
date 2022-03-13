@@ -14,51 +14,40 @@
     position: relative;
     top: 5%;
   }
+  .href:hover{
+    text-decoration: none;
+    color: #ffffff;
+  }
   .wrapper {
-
-
     position: relative;
+
     margin-top: 50px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, 350px);
+    grid-template-columns: repeat(auto-fill, 400px);
   }
 
-  .other_vid{
-    position: relative;
-    width: 45%;
-    right: 0;
+  .vidio_icon:hover{
+    color: #00ffff;
+    background-color: #707079;
+    border: 2px solid #00ffff;
   }
 
-  .p_style{
-
-    font-family: 'Red Hat Display', sans-serif;
-  }
-  .vdio{
-    position: relative;
-    top: 50px;
-    margin-right: 0 !important;
-    position: relative;
-    border: 2px solid #C4C4C4;
-    border-radius: 5px;
-    padding: 1%;
-    left: 0;
-    color: #C4C4C4;
-  }
   .vidio_icon{
     display: flex;
 
+    border-radius: 2px;
 
     justify-content: center;
     position: relative;
     width: 306px;
     height: 185px;
 
-    margin-top: 29px;
+    margin-top: 10%;
     margin-bottom: 0;
-    margin-left: 65px;
+    margin-left: 2.5%;
 
-    background: #595960;
+    background: #475569;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     
@@ -70,6 +59,8 @@
 
     max-width: 302px;
     height: 131px;
+
+    border-radius: 5px;
   }
   .vidio_name{
     position: relative;
@@ -78,14 +69,13 @@
     left: 5px;
 
     width: 295px;
-    height: 12px;
 
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 24px;
     line-height: 14px;
 
-    color: #27272A;
+    color: #ffffff;
   }
 
   .vidio_date{
@@ -106,12 +96,10 @@
   .href{
     color: #27272A;
     text-decoration: none;
+    color: #ffffff;
   }
 
   .href:hover{
     text-decoration: none;
-    color: #C4C4C4;
-  }
-  .vidio_more{
-    color: #C4C4C4;
+    color: #ffffff;
   }

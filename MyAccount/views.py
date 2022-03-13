@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from .forms import signupForm
 from django.contrib import messages
+from .models import CustomUser
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def loginUser(request):
@@ -34,13 +36,15 @@ def signupUser(request):
     data = {'form': form}
     return render(request, 'acount/signup.html', data)    
             
-            
+@login_required(login_url='login')            
 def acount_page(request):
     user = request.user
-    user_videos = 123
+    object = CustomUser.objects.filter(username=user)
     data = { 'user': user,
-             'user_videos': user_videos}
+             'object': object}
     return render(request, 'acount/acount.html', data)
 
 def mychenel(request):
+  
+    
     return render(request, 'acount/Mychenel_page.html')

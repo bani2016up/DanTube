@@ -13,7 +13,7 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #71717A !important;
+			background: #27272A !important;
 		}
 		.user_card {
 			width: 350px;
@@ -49,11 +49,26 @@
 			border-radius: 0.25rem 0 0 0.25rem !important;
 		}
 		.input_user,
-		.input_pass:focus {
+		.input_pass:focus {	
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
-
+		.account_link{
+			color: #ffffff;
+		}
+		a{
+			color: #00ffffb6;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		a:hover{
+			color: #00FFFF;
+			text-decoration: none;
+			background-color: #27272A;
+			border-radius: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
 	</style>
 
 </head>
@@ -112,8 +127,9 @@
 				</div>
 		
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="/acount/login/" class="ml-2">Login</a>
+					<div class="d-flex justify-content-center links text-center">
+						<p class="account_link">Already have an account?<br> 
+							<a href="/acount/login/" class="ml-2">Login</a></p>
 					</div>
 				</div>
 			</div>
