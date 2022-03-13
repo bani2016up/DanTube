@@ -1,8 +1,8 @@
-from urllib import request
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from .forms import signupForm
 from django.contrib import messages
+
 # Create your views here.
 def loginUser(request):
     if request.method == 'POST':
@@ -34,3 +34,13 @@ def signupUser(request):
     data = {'form': form}
     return render(request, 'acount/signup.html', data)    
             
+            
+def acount_page(request):
+    user = request.user
+    user_videos = 123
+    data = { 'user': user,
+             'user_videos': user_videos}
+    return render(request, 'acount/acount.html', data)
+
+def mychenel(request):
+    return render(request, 'acount/Mychenel_page.html')

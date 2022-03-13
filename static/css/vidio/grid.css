@@ -1,74 +1,74 @@
 @media screen and (max-width: 320px){
-    .wrapper{
-      margin-top: 50px;
-    }
-    .vidio_icon{
-      position: relative;
-      width: 320px;
-      height: 109px;
-      left: 0;
-
-      margin-top: 22px;
-      margin-bottom: 0;
-      margin-left: 0;
-      
-      background: #C4C4C4;
-    }
-    .vidio_prive{
-      position: absolute;
-      max-width: 122px;
-      max-height: 107px;
-      left: 1px;
-      top: 1px;
-    }
-    .vidio_name{
-      position: absolute;
-
-      top: 10px;
-      left: 130px;
-
-      width: 151px;
-      height: 14px;
-
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 14px;
-      /* identical to box height */
-      
-      
-      color: #000000;
-    }
-
-    .vidio_data{
-      position: absolute;
-
-      width: 92px;
-      height: 9px;
-
-      top: 50px;
-      left: 130px;
-
-      font-style: normal;
-      font-weight: normal;
-      font-size: 9px;
-      line-height: 11px;
-
-      color: #000000;
-    }
-    .for_phone{
-      display: flex;
-      position: absolute;
-      width: 172px;
-      height: 36px;
-      left: 130px;
-      top: 60px;
-
-      font-style: normal;
-      font-weight: normal;
-      font-size: 9px;
-      line-height: 11px;
-
-      color: #000000;
-    }
+  .wrapper{
+    margin-top: 50px;
   }
+  .vidio_icon{
+    position: relative;
+    width: 320px;
+    height: 109px;
+    left: 0;
+
+    margin-top: 22px;
+    margin-bottom: 0;
+    margin-left: 0;
+    
+    color: #C4C4C4;
+  }
+  .vidio_prive{
+    position: absolute;
+    max-width: 122px;
+    max-height: 107px;
+    left: 1px;
+    top: 1px;
+  }
+  .vidio_name{
+    position: absolute;
+
+    top: 10px;
+    left: 130px;
+
+    width: 151px;
+    height: 14px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+  }
+
+  .vidio_data{
+    position: absolute;
+
+    width: 92px;
+    height: 9px;
+
+    top: 50px;
+    left: 130px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 11px;
+
+    color: #000000;
+  }
+  .for_phone{
+    display: flex;
+    position: absolute;
+    width: 172px;
+    height: 36px;
+    left: 130px;
+    top: 60px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 11px;
+
+    color: #000000;
+  }
+}

@@ -22,7 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vidio/', include('main.urls')),
-    path('acount/', include('acount.urls')),
+    path('acount/', include('MyAccount.urls')),
     path('', redirect_home, name='redirect_to_home'),
     
 
