@@ -1,5 +1,29 @@
-@media screen and (min-width: 2560) {
+@media screen and (max-width: 1850px) {
+    .other_vid{
+        left: 70%;
+    }
+}
+
+@media screen and (max-width: 1620px) {
+    .other_vid{
+        top: 120%;
+        left: 0;
+    }
+
     .vdio{
-        width: 1000px;
+        width: 190%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .other_vid{
+        top: 70%;
+        left: -100px;
+    }
+
+    .vdio{
+        width: 190%;
+        left: 0;
     }
 }

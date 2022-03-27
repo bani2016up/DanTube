@@ -39,28 +39,36 @@
     <link href="{% static '/css/mychenel/main.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static '/css/mychenel/grid.css' %}" rel="stylesheet" type="text/css">
     <title>My chenel</title>
+
+    <!-- For Topiks -->    
+    {% elif request.resolver_match.view_name == 'chapter' %}
+    <link href="{% static '/css/topik/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/css/topik/grid.css' %}" rel="stylesheet" type="text/css">
+    <title>{{ chapter.name }}</title>
     {% endif %}
-  </head>
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container-fluid">
 
-            <a class="navbar-brand" href="/">
-              <img src="{% static '/images/logoes/main.jpg' %}" alt="" width="30" class="d-inline-block align-text-top">
-              DanTube
-            </a>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            {% if request.resolver_match.view_name == 'vidio_page' or request.resolver_match.view_name == 'vidio_search' %}
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            {% else %}
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-            {% endif %}
-            
+              <a class="navbar-brand" href="/">
+                <img src="{% static '/images/logoes/main.jpg' %}" alt="" width="30" class="d-inline-block align-text-top">
+                DanTube
+              </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              {% if request.resolver_match.view_name == 'vidio_page' or request.resolver_match.view_name == 'vidio_search' %}
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              {% else %}
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+              {% endif %}
+              
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -83,7 +91,9 @@
               <li><a class="dropdown-item" href="/acount/">{{ request.user }} account</a></li>
               {% endif %}
               {% if request.resolver_match.view_name == 'mychenel' %}
-              <li><a class="dropdown-item active" href="/acount/mychenel/">My cheanele</a></li>
+              <li><a class="dropdown-item active" href="/acount/mychenel/">chenels
+                30.-+*/ *-
+              </a></li>
               {% else %}
               <li><a class="dropdown-item" href="/acount/mychenel/">My cheanele</a></li>
               {% endif %}
@@ -95,10 +105,9 @@
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/acount/login/">log In</a></li>
               <li><a class="dropdown-item" href="/acount/signup/">Sign Up</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/admin">Admin</a></li>
             </ul>
             {% endif %}
+            <li><a href='/admin'>Admin</a></li>
           </li>
         </ul>
         <form class="d-flex" method='POST' action="{% url 'vidio_search' %}">
@@ -109,7 +118,22 @@
       </div>
     </div>
   </nav>
-  <body style="background-color: #27272A;">
+
+    <nav class="navbar navbar-expand-lg navbar-light topiks">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link href" style="color: white;" href="/vidio">All</a>
+            {% for i in topik %}
+            <a class="nav-link href" style="color: white;" href="/vidio/topik={{ i.slug }}">{{ i.name }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </nav>
   {% block content %}
 
 

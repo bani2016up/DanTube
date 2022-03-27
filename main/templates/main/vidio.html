@@ -1,14 +1,15 @@
 {% extends 'extenders/header.html' %}
 {% load static %}
 
-{% block content %}    
+{% block content %}
+  
       <div class="content">
         <div class="wrapper">
             {% for i in vidio %}
             <center>
             <div class="vidio_icon">
             <a class='href' href="/vidio/{{ i.id }}/watch/">
-             <img class='img vidio_prive' src="{{ i.privew.url }}"> 
+              <div class="vidio_prive" style="background-image: url('{{ i.privew.url }}'); background-position: center;"></div> 
               <p class="vidio_name">{{ i.name }}</p>
                 <!-- <div class="watched">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

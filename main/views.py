@@ -1,28 +1,43 @@
+import datetime
 from email.generator import Generator
 from pathlib import Path
+from re import A
 from typing import IO, Generator
 from urllib import response
 from django.http import StreamingHttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Vidio
+from .models import Vidio, Chapter
 
 # Create your views here.
 def redirect_home(request):
     return redirect('vidio/')
 
 def vidio_page(request):
-    vidio = Vidio.objects.all()
+    vidio = Vidio.objects.order_by('date').filter(publick=True)
+    topik = Chapter.objects.all().exclude(id=7)
+    if request.user.is_authenticated:
+        user = request.user
+        age = user.age()
+        if age < 18:
+            vidio = vidio.filter(content_is_only_18_plus=False)
+    else:
+        vidio = vidio.filter(content_is_only_18_plus=False)
 
-    data = { 'vidio': vidio}
+
+
+    data = { 'vidio': vidio,
+            'topik': topik}
     return render(request, 'main/vidio.html', data)
 
 def vidio_search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         vidio = Vidio.objects.filter(name__contains=searched)
+        topik = Chapter.objects.all().exclude(id=7)
         context={
             'searched': searched,
             'vidio': vidio,
+            'topik': topik
                  }
         return render(request, "main/vidio.html", context )# render
     else:
@@ -31,10 +46,12 @@ def vidio_search(request):
 
 def watch_vidio(request, pk):
     vidio = get_object_or_404(Vidio, pk=pk)
-    vidios = Vidio.objects.all()
+    topik = Chapter.objects.all().exclude(id=7)
+    vidios = Vidio.objects.all().filter(publick=True)
     data = {
         'vidio': vidio,
-        'vidios': vidios
+        'vidios': vidios,
+        'topik': topik
     }
     return render(request, 'main/watch_vidio.html', data)
 
@@ -95,3 +112,36 @@ def open_file(request, vidio_pk: int) -> tuple:
     return file, status_code, content_length, content_range
     
     
+    
+def chapter(request, Chapter_slug):
+    chapter = get_object_or_404(Chapter, slug=Chapter_slug)
+    topik = Chapter.objects.all().exclude(id=7)
+    vidio = Vidio.objects.order_by('date').filter(publick=True)
+    if request.user.is_authenticated:
+        user = request.user
+        age = user.age()
+        if age < 18:
+            vidio = vidio.filter(content_is_only_18_plus=False)
+            if chapter.id == 4: 
+                vidio =vidio.filter(content_is_only_18_plus=False)
+            else:
+                vidio = vidio.filter(topik=chapter.id)
+        else:
+            if chapter.id == 4:
+                vidio = vidio
+            else:
+                vidio = vidio.filter(topik=chapter.id)
+            
+    else:
+        vidio = vidio.filter(content_is_only_18_plus=False)
+        if chapter.id == 4: 
+            vidio = vidio
+        else:
+            vidio = vidio.filter(topik=chapter.id)
+            
+    data = {
+        'chapter': chapter,
+        'topik': topik,
+        'vidio' : vidio
+    }
+    return render(request, 'main/topik.html', data)

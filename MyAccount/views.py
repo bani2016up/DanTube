@@ -32,6 +32,7 @@ def signupUser(request):
         form = signupForm(request.POST)
         if form.is_valid():
             form.save()
+            form.save_m2m()
             return redirect('/')
     data = {'form': form}
     return render(request, 'acount/signup.html', data)    
