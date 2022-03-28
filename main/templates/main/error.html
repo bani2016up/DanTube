@@ -1,0 +1,32 @@
+{% extends 'extenders/header.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    p{
+        color: rgb(204, 204, 204);
+    }
+    .h1{
+        color:rgb(255, 255, 255);
+    }
+    .h2{
+        color:rgb(255, 255, 255);
+    }
+    a{
+        color: aqua;
+    }
+</style>
+<div class="massege">
+    <p class="h1">Why you are here:</p>
+    <br>
+    <p calss="text">If you got redirectet to this page, it means - you are  not registrated, loged in or you are yonger then 18.<br>
+    Some content is unimproperd for kids, so you cant watch it, unlsee you prover that you are older than 18 years old.</p>
+
+    <p class="h2">How to solwe it?</p>
+    <p class="text">
+        To solve this problem, you just need to <a href='/acount/login/'>log in</a>, if you dont have an acount, you can <a href='/acount/signup/'>sign up</a><br>
+        If you are yunger than 18 yeaers old, you need to wait until you are.
+    </p>
+</div>
+
+{% endblock %}

@@ -12,7 +12,7 @@ class ChapterAdmin(admin.ModelAdmin):
     
     
 class VidioAdmin(admin.ModelAdmin):
-    fields = ('name', 'description', ('vidio', 'privew'), 'relateed_to_chenel', ('publick','content_is_only_18_plus'), 'topik')
+    fields = ('name', 'description', ('vidio', 'privew'), 'relateed_to_chenel', ('publick','content_is_only_18_plus'), 'topik', 'watched')
     
 admin.site.register(Vidio, VidioAdmin)
 admin.site.register(Chapter, ChapterAdmin)

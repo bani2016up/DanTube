@@ -13,7 +13,7 @@ def redirect_home(request):
     return redirect('vidio/')
 
 def vidio_page(request):
-    vidio = Vidio.objects.order_by('date').filter(publick=True)
+    vidio = Vidio.objects.order_by('-watched').filter(publick=True)
     topik = Chapter.objects.all().exclude(id=7)
     if request.user.is_authenticated:
         user = request.user
@@ -22,11 +22,14 @@ def vidio_page(request):
             vidio = vidio.filter(content_is_only_18_plus=False)
     else:
         vidio = vidio.filter(content_is_only_18_plus=False)
+    
+    status = 'Home Page'
 
 
 
     data = { 'vidio': vidio,
-            'topik': topik}
+            'topik': topik,
+            'status': status}
     return render(request, 'main/vidio.html', data)
 
 def vidio_search(request):
@@ -34,10 +37,12 @@ def vidio_search(request):
         searched = request.POST['searched']
         vidio = Vidio.objects.filter(name__contains=searched)
         topik = Chapter.objects.all().exclude(id=7)
+        status = 'search for ' + searched
         context={
             'searched': searched,
             'vidio': vidio,
-            'topik': topik
+            'topik': topik,
+            'status': status
                  }
         return render(request, "main/vidio.html", context )# render
     else:
@@ -48,10 +53,34 @@ def watch_vidio(request, pk):
     vidio = get_object_or_404(Vidio, pk=pk)
     topik = Chapter.objects.all().exclude(id=7)
     vidios = Vidio.objects.all().filter(publick=True)
+    content_is_only_18_plus = vidio.content_is_only_18_plus
+    status = 'Watch vidio ' + vidio.name
+    watched = vidio.watched
+    
+    if request.user.is_authenticated:
+        user = request.user
+        age = user.age()
+        if age < 18:
+            vidios = vidios.filter(content_is_only_18_plus=False)
+            if content_is_only_18_plus == True:
+                return redirect('/vidio/error/')
+        else:
+            vidio = vidio   
+            watched += 1
+            vidio.watched = watched
+            vidio.save()
+            
+    else:
+        if content_is_only_18_plus == True:
+            return redirect('/vidio/error/')
+           
+        else: 
+            vidios = vidios.filter(content_is_only_18_plus=False)
     data = {
         'vidio': vidio,
         'vidios': vidios,
-        'topik': topik
+        'topik': topik,
+        'status': status
     }
     return render(request, 'main/watch_vidio.html', data)
 
@@ -136,12 +165,18 @@ def chapter(request, Chapter_slug):
         vidio = vidio.filter(content_is_only_18_plus=False)
         if chapter.id == 4: 
             vidio = vidio
+            
         else:
             vidio = vidio.filter(topik=chapter.id)
-            
+    status = 'Filter by ' + chapter.name        
     data = {
         'chapter': chapter,
         'topik': topik,
-        'vidio' : vidio
+        'vidio' : vidio,
+        'status' : status
     }
     return render(request, 'main/topik.html', data)
+
+def error_page(request):
+    data = {}
+    return render(request, 'main/error.html')

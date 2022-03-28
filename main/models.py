@@ -10,7 +10,7 @@ class Vidio(models.Model):
     name = models.CharField(max_length=115)
     description = models.TextField()
     date = models.DateTimeField(auto_now=True)
-    vidio = models.FileField(upload_to='media/', validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mov'])])
+    vidio = models.FileField(upload_to='media/', validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mov', 'mkv'])])
     privew = models.FileField(upload_to='media/')
     relateed_to_chenel = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     publick = models.BooleanField(default=True)

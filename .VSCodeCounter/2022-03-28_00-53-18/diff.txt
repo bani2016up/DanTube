@@ -1,0 +1,93 @@
+Date : 2022-03-28 00:53:18
+Directory : c:\Users\User\Documents\Softwhere\python\django\vidio
+Total : 53 files,  1289 codes, 87 comments, 371 blanks, all 1747 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| Python           |         39 |        745 |         85 |        232 |      1,062 |
+| CSS              |         12 |        505 |          2 |        127 |        634 |
+| Markdown         |          1 |         22 |          0 |         12 |         34 |
+| pip requirements |          1 |         17 |          0 |          0 |         17 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                    | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                       |         53 |      1,289 |         87 |        371 |      1,747 |
+| MyAccount                                                                                                                               |         14 |        238 |          9 |         68 |        315 |
+| MyAccount\migrations                                                                                                                    |          6 |        131 |          5 |         32 |        168 |
+| main                                                                                                                                    |         19 |        394 |         15 |        117 |        526 |
+| main\migrations                                                                                                                         |         12 |        214 |         11 |         68 |        293 |
+| static                                                                                                                                  |         12 |        505 |          2 |        127 |        634 |
+| static\css                                                                                                                              |         12 |        505 |          2 |        127 |        634 |
+| static\css\account                                                                                                                      |          2 |         23 |          0 |          4 |         27 |
+| static\css\extends                                                                                                                      |          2 |         38 |          0 |          8 |         46 |
+| static\css\mychenel                                                                                                                     |          2 |         51 |          0 |         12 |         63 |
+| static\css\topik                                                                                                                        |          2 |        134 |          1 |         35 |        170 |
+| static\css\vidio                                                                                                                        |          2 |        134 |          1 |         35 |        170 |
+| static\css\watch_vidio                                                                                                                  |          2 |        125 |          0 |         33 |        158 |
+| vidio                                                                                                                                   |          5 |         98 |         58 |         42 |        198 |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                                                                | language         | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\__init__.py                                                             | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\admin.py                                                                | Python           |          5 |          1 |          0 |          6 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\apps.py                                                                 | Python           |          4 |          0 |          3 |          7 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\forms.py                                                                | Python           |         11 |          0 |          3 |         14 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\0001_initial.py                                              | Python           |         47 |          1 |          7 |         55 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\0002_remove_customuser_vidio_customuser_active_and_more.py   | Python           |         27 |          1 |          6 |         34 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\0003_customuser_date_of_birth_customuser_gender_and_more.py  | Python           |         22 |          1 |          6 |         29 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\0004_remove_customuser_interests_customuser_interests.py     | Python           |         17 |          1 |          6 |         24 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\0005_alter_customuser_gender_alter_customuser_interests.py   | Python           |         18 |          1 |          6 |         25 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\migrations\__init__.py                                                  | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\models.py                                                               | Python           |         38 |          1 |         14 |         53 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\tests.py                                                                | Python           |          1 |          1 |          2 |          4 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\urls.py                                                                 | Python           |          9 |          0 |          2 |         11 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\MyAccount\views.py                                                                | Python           |         39 |          1 |         11 |         51 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\README.md                                                                         | Markdown         |         22 |          0 |         12 |         34 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\__init__.py                                                                  | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\admin.py                                                                     | Python           |         13 |          1 |          5 |         19 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\apps.py                                                                      | Python           |          4 |          0 |          3 |          7 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0001_initial.py                                                   | Python           |         19 |          1 |          7 |         27 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0002_vidio_publick_vidio_relateed_to_chenel_vidio_watched.py      | Python           |         26 |          1 |          6 |         33 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0003_color.py                                                     | Python           |         15 |          1 |          6 |         22 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0004_remove_color_color_color_extra_color_and_more.py             | Python           |         47 |          1 |          6 |         54 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0005_chapter_color_chapter_color_color_chapter_color2_and_more.py | Python           |         33 |          1 |          6 |         40 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0006_rename_slag_chapter_slug.py                                  | Python           |         12 |          1 |          6 |         19 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0007_remove_vidio_topik_vidio_topik.py                            | Python           |         16 |          1 |          6 |         23 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0008_delete_color.py                                              | Python           |         10 |          1 |          6 |         17 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0009_alter_vidio_topik.py                                         | Python           |         12 |          1 |          6 |         19 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0010_vidio_content_is_18_plus.py                                  | Python           |         12 |          1 |          6 |         19 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\0011_rename_content_is_18_plus_vidio_content_is_only_18_plus.py   | Python           |         12 |          1 |          6 |         19 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\migrations\__init__.py                                                       | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\models.py                                                                    | Python           |         30 |          1 |         13 |         44 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\tests.py                                                                     | Python           |          1 |          1 |          2 |          4 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\urls.py                                                                      | Python           |          9 |          0 |          2 |         11 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\main\views.py                                                                     | Python           |        123 |          1 |         23 |        147 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\manage.py                                                                         | Python           |         15 |          3 |          5 |         23 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\requirements.txt                                                                  | pip requirements |         17 |          0 |          0 |         17 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\account\grid.css                                                       | CSS              |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\account\main.css                                                       | CSS              |         23 |          0 |          3 |         26 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\extends\grid.css                                                       | CSS              |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\extends\main.css                                                       | CSS              |         38 |          0 |          7 |         45 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\mychenel\grid.css                                                      | CSS              |          5 |          0 |          0 |          5 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\mychenel\main.css                                                      | CSS              |         46 |          0 |         12 |         58 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\topik\grid.css                                                         | CSS              |         59 |          1 |         14 |         74 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\topik\main.css                                                         | CSS              |         75 |          0 |         21 |         96 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\vidio\grid.css                                                         | CSS              |         59 |          1 |         14 |         74 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\vidio\main.css                                                         | CSS              |         75 |          0 |         21 |         96 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\watch_vidio\grid.css                                                   | CSS              |         25 |          0 |          4 |         29 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\static\css\watch_vidio\main.css                                                   | CSS              |        100 |          0 |         29 |        129 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\vidio\__init__.py                                                                 | Python           |          0 |          0 |          1 |          1 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\vidio\asgi.py                                                                     | Python           |          4 |          8 |          5 |         17 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\vidio\settings.py                                                                 | Python           |         78 |         27 |         28 |        133 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\vidio\urls.py                                                                     | Python           |         12 |         15 |          3 |         30 |
+| c:\Users\User\Documents\Softwhere\python\django\vidio\vidio\wsgi.py                                                                     | Python           |          4 |          8 |          5 |         17 |
+| Total                                                                                                                                   |                  |      1,289 |         87 |        371 |      1,747 |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
