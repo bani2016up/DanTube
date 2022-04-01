@@ -1,4 +1,5 @@
 from datetime import datetime
+from email.policy import default
 from statistics import mode
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -29,8 +30,8 @@ class CustomUser(AbstractUser):
     
     Chenelname = models.CharField(max_length=32, blank=True)
     datecreated = models.DateField(auto_now_add=True)
-    icon = models.ImageField(blank=True)
-    backgtound = models.ImageField(blank=True)
+    icon = models.ImageField(blank=True, default='users_defult/05e93d6ba2e8e9076a51b5eece3a12f1_400x400.png')
+    backgtound = models.ImageField(blank=True, default='users_defult/depositphotos_56588069-stock-photo-earth-view-from-space-at.jpg')
     descprion = models.TextField(blank=True)
     slug = models.SlugField(unique=True, auto_created=True, db_index=True)
     subsribetchenels = models.ManyToManyField('CustomUser', blank=True)
@@ -43,7 +44,7 @@ class CustomUser(AbstractUser):
     
     
     def age(self):
-        return int((datetime.now().date() - self.date_of_birth).days / 365.25  )
+        return int((datetime.now().date() - self.date_of_birth).days / 365.25)
 
     
     

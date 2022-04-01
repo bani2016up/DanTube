@@ -22,8 +22,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('vidio/', include('main.urls')),
-    path('acount/', include('MyAccount.urls')),
+    path('account/', include('MyAccount.urls')),
     path('', redirect_home, name='redirect_to_home'),
+    path('help/', include('help.urls')),
     
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

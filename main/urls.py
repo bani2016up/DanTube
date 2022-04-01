@@ -6,7 +6,6 @@ urlpatterns = [
     path('search/', views.vidio_search, name='vidio_search'),
     path('<int:pk>/watch/', views.watch_vidio, name='wathc_vido'),
     path('stream/<int:pk>/', views.get_streaming_video, name='stream'),
-    path('topik=<slug:Chapter_slug>/', views.chapter, name='chapter'),
-    path('error/', views.error_page, name='error_page')
+    path('topik=<slug:Chapter_slug>/', views.chapter, name='chapter')
 
 ]

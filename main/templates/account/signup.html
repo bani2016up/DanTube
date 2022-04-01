@@ -93,6 +93,12 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
+							{{ form.slug }}
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
 							{{ form.first_name }}
 						</div>
 						<div class="input-group mb-3">
@@ -147,7 +153,7 @@
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links text-center">
 						<p class="account_link">Already have an account?<br> 
-							<a href="/acount/login/" class="ml-2">Login</a></p>
+							<a href="/account/login/" class="ml-2">Login</a></p>
 					</div>
 				</div>
 			</div>
@@ -161,12 +167,16 @@
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
 		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='First Name..';
-		form_fields[3].placeholder='Last Name..';
-		form_fields[4].placeholder='year-month-day (2000-01-30)';
-		form_fields[5].placeholder='Email..';
-		form_fields[6].placeholder='Enter password...';
-		form_fields[7].placeholder='Re-enter Password...';
+		form_fields[2].placeholder='Uniqe slug..';
+		form_fields[3].placeholder='First Name..';
+		form_fields[4].placeholder='Last Name..';
+		form_fields[5].placeholder='year-month-day (2000-01-30)';
+		form_fields[6].placeholder='Email..';
+		form_fields[7].placeholder='Enter password...';
+		form_fields[8].placeholder='Re-enter Password...';
+
+
+
 
 		for (var field in form_fields){	
 			form_fields[field].className += ' form-control'

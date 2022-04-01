@@ -7,6 +7,12 @@ from MyAccount.models import CustomUser
 
 # Create your models here.
 class Vidio(models.Model):
+    GENDER = (
+        ('Man', 'Man'),
+        ('Woman', 'Woman'),
+        ('Other', 'Other'),
+        )
+    
     name = models.CharField(max_length=115)
     description = models.TextField()
     date = models.DateTimeField(auto_now=True)
@@ -17,6 +23,7 @@ class Vidio(models.Model):
     watched = models.BigIntegerField(default=0)
     topik = models.ManyToManyField('chapter')
     content_is_only_18_plus = models.BooleanField(default=False)
+    vidio_for_gender = models.CharField(choices=GENDER, default='Other', max_length=8)
     
     
     def __str__(self):
@@ -25,6 +32,14 @@ class Vidio(models.Model):
     def get_absolute_url(self):
         return reverse("model_detail", kwargs={"pk": self.pk})
     
+    def find_gender(self):
+        if 'game' in self.name:
+            for_gender = 'Man'
+        elif 'Test' in self.name:
+            for_gender = 'Woman'
+        else:
+            for_gender = 'Other'
+        return for_gender
 
 class Chapter(models.Model):
     name = models.CharField(max_length=32, unique=True)

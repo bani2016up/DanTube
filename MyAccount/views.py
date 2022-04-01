@@ -16,9 +16,9 @@ def loginUser(request):
             login(request, user)
             return redirect('/')
         else:
-            messages.warning(request, 'Smt is wrong.')
+            messages.warning(request, 'Password or username is wrong.')
             
-    return render(request, 'acount/login.html')
+    return render(request, 'account/login.html')
         
 
 
@@ -33,19 +33,33 @@ def signupUser(request):
         if form.is_valid():
             form.save()
             form.save_m2m()
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
             return redirect('/')
+            
+            
     data = {'form': form}
-    return render(request, 'acount/signup.html', data)    
+    return render(request, 'account/signup.html', data)    
             
 @login_required(login_url='login')            
-def acount_page(request):
+def account_page(request):
     user = request.user
     object = CustomUser.objects.filter(username=user)
     data = { 'user': user,
              'object': object}
-    return render(request, 'acount/acount.html', data)
+    return render(request, 'account/account.html', data)
 
 def mychenel(request):
-  
+    user = request.user
     
-    return render(request, 'acount/Mychenel_page.html')
+    data = {
+        'user' : user
+    }
+    
+    return render(request, 'account/Mychenel_page.html', data)
+
+def subs(request):
+    pass

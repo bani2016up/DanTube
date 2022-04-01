@@ -1,5 +1,6 @@
 import datetime
 from email.generator import Generator
+from operator import ge, truediv
 from pathlib import Path
 from re import A
 from typing import IO, Generator
@@ -12,20 +13,32 @@ from .models import Vidio, Chapter
 def redirect_home(request):
     return redirect('vidio/')
 
+
 def vidio_page(request):
     vidio = Vidio.objects.order_by('-watched').filter(publick=True)
-    topik = Chapter.objects.all().exclude(id=7)
+    topik = Chapter.objects.all().exclude(id=7)    
     if request.user.is_authenticated:
         user = request.user
+        gender = user.gender 
+        print(gender) 
+        for i in vidio:
+            vidio_for = i.find_gender()
+            index = i.id
+            vidioo = get_object_or_404(Vidio, id=index)
+            vidioo.vidio_for_gender = vidio_for
+            vidioo.save()
+                 
+        vidio = vidio.filter(vidio_for_gender=gender)
+        print(vidio)  
+        print(user)
         age = user.age()
+        print(age)
         if age < 18:
             vidio = vidio.filter(content_is_only_18_plus=False)
     else:
         vidio = vidio.filter(content_is_only_18_plus=False)
     
     status = 'Home Page'
-
-
 
     data = { 'vidio': vidio,
             'topik': topik,
@@ -56,23 +69,23 @@ def watch_vidio(request, pk):
     content_is_only_18_plus = vidio.content_is_only_18_plus
     status = 'Watch vidio ' + vidio.name
     watched = vidio.watched
-    
     if request.user.is_authenticated:
         user = request.user
         age = user.age()
         if age < 18:
             vidios = vidios.filter(content_is_only_18_plus=False)
             if content_is_only_18_plus == True:
-                return redirect('/vidio/error/')
+                return redirect('/help/errors/')
         else:
-            vidio = vidio   
+            vidio = vidio
+               
             watched += 1
             vidio.watched = watched
             vidio.save()
             
     else:
         if content_is_only_18_plus == True:
-            return redirect('/vidio/error/')
+            return redirect('/help/errors/')
            
         else: 
             vidios = vidios.filter(content_is_only_18_plus=False)
@@ -177,6 +190,3 @@ def chapter(request, Chapter_slug):
     }
     return render(request, 'main/topik.html', data)
 
-def error_page(request):
-    data = {}
-    return render(request, 'main/error.html')
