@@ -20,8 +20,8 @@ class Vidio(models.Model):
     privew = models.FileField(upload_to='media/')
     relateed_to_chenel = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     publick = models.BooleanField(default=True)
-    watched = models.BigIntegerField(default=0)
-    topik = models.ManyToManyField('chapter')
+    watched = models.BigIntegerField(default=False)
+    topik = models.ManyToManyField('Chapter')
     content_is_only_18_plus = models.BooleanField(default=False)
     vidio_for_gender = models.CharField(choices=GENDER, default='Other', max_length=8)
     

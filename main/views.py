@@ -8,6 +8,7 @@ from urllib import response
 from django.http import StreamingHttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Vidio, Chapter
+from .forms import AddVidioForm
 
 # Create your views here.
 def redirect_home(request):
@@ -190,3 +191,18 @@ def chapter(request, Chapter_slug):
     }
     return render(request, 'main/topik.html', data)
 
+
+def new_vidio(request):
+    if request.user.is_authenticated:
+        form = AddVidioForm()
+        if request.method == 'POST':
+            if form.is_valid():
+                form.save()
+                form.save_m2m()
+        
+        topik = Chapter.objects.all()
+        data = {'topik' : topik,
+                'form': form}
+        return render(request, 'main/new_vidio.html', data)
+    else:
+        return redirect('/account/login')

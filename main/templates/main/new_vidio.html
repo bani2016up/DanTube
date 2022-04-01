@@ -1,0 +1,70 @@
+{% extends 'extenders/header.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    form{
+        color: rgb(255, 255, 255);
+    }
+    body{
+        width: 100%;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+<center>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+<form class="row g-3 needs-validation" novalidate method="post">
+    <div>
+        <h1>
+            Add youre video, and tell us about it.
+        </h1>
+        <div>
+        
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Video Name</label>
+                <input type="text" class="form-control" id="validationCustom01" value="Video Name" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Video file</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Prevew file</label>
+                    <input class="form-control" type="file" id="formFile">
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Video is publick(evrybody can see it)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Video is 18+(not for kids)
+                    </label>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option selected>Select any tegs that youre vidio is about.</option>
+                        {% for i in topik %}
+                        <option value="{{ i.slug }}">{{i.name}}</option>
+                        {% endfor %}
+                      </select>
+        </div>
+    </div>
+    <button action="POST" class="btn btn-outline-light" type="button">Submit</button>
+</form>
+</center>
+
+{% endblock %}
