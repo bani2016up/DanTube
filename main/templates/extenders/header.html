@@ -133,6 +133,7 @@
               <a class="nav-link" aria-current="page" href="/vidio/new">Add vidio</a>
               {% endif %}
             </li>
+            
             <li class="nav-item"><a href='/admin'>Admin</a></li>
           
         </ul>
@@ -158,8 +159,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="z-index:1;">
           <div class="navbar-nav" style="background-color: #474749">
-            <a class="nav-link href" style="color: white;" href="/vidio">Main</a>
-            <a class="nav-link href" style="color: white;" href="/account/sub">Subscribeed</a>
+            <a class="nav-link href" style="color: white; background: rgba(0, 255, 255, 0.566); border-radius: 2px;" href="/vidio">Main</a>
+            <a class="nav-link href" style="color: white; background: rgba(244, 63, 93, 0.546); border-radius: 2px;" href="/account/sub">Subscribed</a>
             {% for i in topik %}
             <a class="nav-link href" style="color: white;" href="/vidio/topik={{ i.slug }}">{{ i.name }}</a>
             {% endfor %}

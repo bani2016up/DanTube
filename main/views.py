@@ -1,10 +1,6 @@
-import datetime
 from email.generator import Generator
-from operator import ge, truediv
 from pathlib import Path
-from re import A
 from typing import IO, Generator
-from urllib import response
 from django.http import StreamingHttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Vidio, Chapter
